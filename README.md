@@ -36,15 +36,20 @@ theme: aath
 highlight:
   line_number: false
 
-# Comment
-## disqus
-## livere
-disqus_shortname: your_disqus_shortname
-livere_uid: your_livere_uid
-
 # favicon
 favicon: /favicon.ico
 
+# Comment
+gitalk:
+  enabled: true
+  clientID: 6ae565c159db15a6167c
+  clientSecret: 6b81331560c108209346bc4807a5126da190e14c
+  repo: blogcomments
+  owner: lxzmads
+  admin: 
+    - lxzmads
+  distractionFreeMode: false
+  
 # Aside
 ## search
 ## avatar
@@ -90,22 +95,6 @@ Aath-magic 使用 [fancyBox](http://fancyapps.com/fancybox/) 浏览文章中的�
 ### 文章目录
 
 自动为文章生成多级目录，目录样式使用了 `position: sticky` 属性，实现了目录相对浏览器固定的效果，这是一个较新的属性，需要浏览器支持。
-
-### gitalk
-
-Aath-magic 使用 gitalk 作为评论系统。 需要在主题的_config.yml配置相关信息。一个例子：
-
-```yml
-gitalk:
-  enabled: true
-  clientID: 6ae565c159db15a6167c
-  clientSecret: 6b81331560c108209346bc4807a5126da190e14c
-  repo: blogcomments
-  owner: lxzmads
-  admin: 
-    - lxzmads
-  distractionFreeMode: false
-```
 
 ### markdown
 

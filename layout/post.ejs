@@ -1,8 +1,9 @@
 <main id='post'>
   <div class="content">
     <article>
-        <section class="content markdown-body">
+        <section class="content aath-body">
           <h1><%= page.title ? page.title : __('untitled') %></h1>
+          <% if(page.layout === 'post'){ %>
           <div class='post-meta'>
             <i class="fa fa-calendar" aria-hidden="true"></i> <time><%-date(page.date, __('date_format'))%></time>
             <% if(page.categories && page.categories.length) { %>
@@ -16,26 +17,18 @@
                 <% } %>
                <%- partial('_partial/tag', { tags: page.tags }) %>
             <% } %>
+            | <i class="fas fa-edit" aria-hidden="true"></i> <time><%-date(page.updated, __('date_format'))%></time>
           </div>
+          <% } %>
           <%- page.content %>
+          <%- partial('_partial/post-copyright') %>
         </section>
     </article>
-    <% if(config['disqus_shortname']) { %>
-        <!-- disqus 评论框 start -->
-        <div class="comment">
-            <div id="disqus_thread" class="disqus-thread">
-              <i><%= __('over_the_wall') %></i>
-            </div>
-        </div>
-        <!-- disqus 评论框 end -->
+    <% if(config['gitalk'] && page.comment !== false) { %>
+    <div class="comment">
+        <div id="gitalk-container"></div>
+    </div>
     <% } %>
-    <% if(config['livere_uid']) { %>
-        <!-- livere 评论框 start -->
-        <div class="comment">
-            <div id="lv-container" data-id="city" data-uid="<%= config['livere_uid'] %>"></div>
-        </div>
-        <!-- livere 评论框 end -->
-    <% } %>    
   </div>
   <aside>
     <% if(toc(page.content)) { %>
@@ -48,59 +41,17 @@
     <% } %>
   </aside>
 </main>
-<% if(config['disqus_shortname']) { %>
-<!-- disqus 公共JS代码 -->
+<% if(config['gitalk'] && page.comment !== false ) { %>
 <script type="text/javascript">
-  /* * * CONFIGURATION VARIABLES * * */
-  var disqus_shortname = "<%= config['disqus_shortname'] %>";
-  var disqus_identifier = "<%= page.permalink %>";
-  var disqus_url = "<%= page.permalink %>";
-
-  isAgent(getDisqus)
-
-  // determine user agent in China
-  function isAgent(cb) {
-    var url = '//graph.facebook.com/feed?callback=h';
-    var xhr = new XMLHttpRequest();
-    var called = false;
-    xhr.open('GET', url);
-    xhr.onreadystatechange = function() {
-      if (xhr.readyState === 4 && xhr.status === 200) {
-      called = true;
-      cb(true);
-      }
-    };
-    xhr.send();
-    // timeout 1s, this facebook API is very fast.
-    setTimeout(function() {
-      if (!called) {
-      xhr.abort();
-      cb(false)
-      }
-    }, 1000);
-  }
-
-  function getDisqus(isAgent) {
-    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; 
-    dsq.async = true
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq)
-  }
-</script>
-<!-- disqus 公共JS代码 end -->
-<% } %>
-<% if (config['livere_uid']) { %>
-<script type="text/javascript">
-  (function(d, s) {
-      var j, e = d.getElementsByTagName(s)[0];
-
-      if (typeof LivereTower === 'function') { return; }
-
-      j = d.createElement(s);
-      j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-      j.async = true;
-
-      e.parentNode.insertBefore(j, e);
-  })(document, 'script');
+const gitalk = new Gitalk({
+  clientID: "6ae565c159db15a6167c",
+  clientSecret: '6b81331560c108209346bc4807a5126da190e14c',
+  repo: 'blogcomments',
+  owner: 'lxzmads',
+  admin: ['lxzmads'],
+  id: decodeURI(location.pathname),      // Ensure uniqueness and length less than 50
+  distractionFreeMode: false  // Facebook-like distraction free mode
+})
+gitalk.render('gitalk-container')
 </script>
 <% } %>

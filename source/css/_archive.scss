@@ -1,7 +1,9 @@
 #archive {
-  width: 1000px;
+//   width: 1000px;
   .content {
-    @include left-container;
+    // @include left-container;
+    width: 100%;
+    padding-left: 3%;
     align-self: flex-start;
     .year-list {
       padding: 20px 25px 15px;
@@ -38,7 +40,7 @@
 
 @media (min-width: $breakpoint-desktop) {
   #archive {
-    width: 1000px;
+    // width: 1000px;
   }
 }
 
@@ -51,6 +53,7 @@
 
 @media (max-width: $breakpoint-phone) {
   #archive {
+    padding: 0;
     .content {
       width: 100%;
     }

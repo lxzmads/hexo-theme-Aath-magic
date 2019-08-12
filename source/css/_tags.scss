@@ -1,8 +1,8 @@
 #tags {
   .tags-container {
-    @include left-container;
-    width: 66%;
-    padding: 0;
+    // @include left-container;
+    width: 100%;
+    padding-left: 3%;
   }
   .tags {
     padding: 25px 25px 20px;
@@ -83,6 +83,7 @@
 
 @media (max-width: $breakpoint-phone) {
   #tags {
+    padding: 0;
     .tags-container {
       width: 100%;
     }

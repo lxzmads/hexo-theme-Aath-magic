@@ -27,7 +27,7 @@
           <% } %>
         </div>
         <div class='post-meta'>
-          <i class="fa fa-calendar" aria-hidden="true"></i> <time><%-date(post.date, __('date_format'))%></time>
+          <i class="fa fa-calendar"></i> <time><%-date(post.date, __('date_format'))%></time>
           <% if(post.categories.length) { %>
             | <i class="fa fa-folder-open-o" aria-hidden="true"></i> <%- partial('_partial/categories', { post: post }) %>
           <% } %>
@@ -40,6 +40,7 @@
               <% } %>
              <%- partial('_partial/tag', { tags: post.tags }) %>
           <% } %>
+          | <i class="fas fa-edit" aria-hidden="true"></i> <time><%-date(post.updated, __('date_format'))%></time>
         </div>
       </section>
     <%})%>

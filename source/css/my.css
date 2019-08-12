@@ -1,0 +1,24 @@
+.post-copyright {
+    width: 80%;
+    margin: 2.8em auto 0;
+    padding: 0.5em 1em;
+    border: 1px solid #d3d3d3;
+    font-size: 0.93rem;
+    line-height: 1.6em;
+    word-break: break-all;
+    background: rgba(255,255,255,0.4);
+}
+.post-copyright span {
+    display: inline-block;
+    width: 5.2em;
+    color: #b5b5b5;
+    font-weight: bold;
+}
+.post-copyright .warn {
+    display: inline;
+    color: burlywood;
+}
+.post-copyright p{
+    margin: 0;
+    color: #bababa;
+}

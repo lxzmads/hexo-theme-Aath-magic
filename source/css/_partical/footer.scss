@@ -3,7 +3,9 @@ footer {
     @include basic;
     display: flex;
     line-height: 3em;
+    font-size: 0.7rem;
     color: #BABABA;
+    justify-content: center;
     a {
       &:hover {
         color: $hover-color;

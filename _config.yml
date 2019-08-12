@@ -12,3 +12,12 @@ menu:
 # Miscelaneous
 favicon: /favicon.ico
 
+gitalk:
+  enabled: true
+  clientID: 6ae565c159db15a6167c
+  clientSecret: 6b81331560c108209346bc4807a5126da190e14c
+  repo: blogcomments
+  owner: lxzmads
+  admin: 
+    - lxzmads
+  distractionFreeMode: false

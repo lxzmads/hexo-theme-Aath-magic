@@ -1,16 +1,10 @@
-# [Aath](https://lewis-geek.github.io/hexo-theme-unit-test/)
+# Aath-magic
 
-[English Documentation](https://github.com/lewis-geek/hexo-theme-Aath/blob/develop/README.en.md)
+Aath-magic 基于了[Aath](https://github.com/lewis-geek/hexo-theme-Aath)，参考了[developerworks](https://www.ibm.com/developerworks/cn) 设计风格
 
-Aath 参考了[知乎](https://www.zhihu.com/)和[掘金](https://juejin.im/timeline)的部分设计
+## [Demo](https://lxzmads.github.io/)
 
-## [Demo](http://lewis.suclub.cn/)
-
-### [测试页面](https://lewis-geek.github.io/hexo-theme-unit-test/)
-
-### [代码例子](https://github.com/lewis-geek/hexo-theme-unit-test)
-
-![Aath](http://olnzpdi2u.bkt.clouddn.com/Untitled-1880.png)
+![Aath-magic](https://raw.githubusercontent.com/lxzmads/picbed/master/20190812153600.png)
 
 ## 安装
 
@@ -19,13 +13,7 @@ Aath 参考了[知乎](https://www.zhihu.com/)和[掘金](https://juejin.im/time
 #### 最新 release 版
 
 ```bash
-$ git clone -b master https://github.com/lewis-geek/hexo-theme-Aath.git themes/aath
-```
-
-#### 开发版
-
-```bash
-$ git clone -b develop https://github.com/lewis-geek/hexo-theme-Aath.git themes/aath
+$ git clone -b master https://github.com/lxzmads/hexo-theme-Aath-magic.git themes/aath-magic
 ```
 
 ### 依赖
@@ -97,11 +85,27 @@ favicon: /favicon.ico
 
 ### fancybox
 
-Aath 使用 [fancyBox](http://fancyapps.com/fancybox/) 浏览文章中的图片。
+Aath-magic 使用 [fancyBox](http://fancyapps.com/fancybox/) 浏览文章中的图片。
 
 ### 文章目录
 
 自动为文章生成多级目录，目录样式使用了 `position: sticky` 属性，实现了目录相对浏览器固定的效果，这是一个较新的属性，需要浏览器支持。
+
+### gittalk
+
+Aath-magic 使用 gittalk 作为评论系统。 需要在主题的_config.yml配置相关信息。一个例子：
+
+```yml
+gitalk:
+  enabled: true
+  clientID: 6ae565c159db15a6167c
+  clientSecret: 6b81331560c108209346bc4807a5126da190e14c
+  repo: blogcomments
+  owner: lxzmads
+  admin: 
+    - lxzmads
+  distractionFreeMode: false
+```
 
 ### markdown
 

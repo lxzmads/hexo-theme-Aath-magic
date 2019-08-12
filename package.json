@@ -1,7 +1,7 @@
 {
-  "name": "hexo-theme-aath",
+  "name": "hexo-theme-aath-magic",
   "version": "0.0.0",
-  "description": "hexo theme Aath",
+  "description": "hexo theme Aath-magic",
   "private": true,
   "dependencies": {
     "hexo": "^3.3.9",

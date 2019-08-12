@@ -24,7 +24,7 @@
           <%- partial('_partial/post-copyright') %>
         </section>
     </article>
-    <% if(config['gitalk'] && page.comment !== false) { %>
+    <% if(theme.gitalk.enabled && page.comment !== false) { %>
     <div class="comment">
         <div id="gitalk-container"></div>
     </div>
@@ -41,16 +41,16 @@
     <% } %>
   </aside>
 </main>
-<% if(config['gitalk'] && page.comment !== false ) { %>
+<% if(theme.gitalk.enabled && page.comment !== false ) { %>
 <script type="text/javascript">
 const gitalk = new Gitalk({
-  clientID: "6ae565c159db15a6167c",
-  clientSecret: '6b81331560c108209346bc4807a5126da190e14c',
-  repo: 'blogcomments',
-  owner: 'lxzmads',
-  admin: ['lxzmads'],
+  clientID: "<%- theme.gitalk.clientID %>",
+  clientSecret: "<%- theme.gitalk.clientSecret %>",
+  repo: "<%-theme.gitalk.repo %>",
+  owner: "<%-theme.gitalk.owner %>",
+  admin: "<%-theme.gitalk.admin %>",
   id: decodeURI(location.pathname),      // Ensure uniqueness and length less than 50
-  distractionFreeMode: false  // Facebook-like distraction free mode
+  distractionFreeMode: "<%-theme.gitalk.distractionFreeMode %>"  // Facebook-like distraction free mode
 })
 gitalk.render('gitalk-container')
 </script>

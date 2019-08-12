@@ -91,9 +91,9 @@ Aath-magic 使用 [fancyBox](http://fancyapps.com/fancybox/) 浏览文章中的�
 
 自动为文章生成多级目录，目录样式使用了 `position: sticky` 属性，实现了目录相对浏览器固定的效果，这是一个较新的属性，需要浏览器支持。
 
-### gittalk
+### gitalk
 
-Aath-magic 使用 gittalk 作为评论系统。 需要在主题的_config.yml配置相关信息。一个例子：
+Aath-magic 使用 gitalk 作为评论系统。 需要在主题的_config.yml配置相关信息。一个例子：
 
 ```yml
 gitalk:

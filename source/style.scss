@@ -5,10 +5,7 @@ $breakpoint-desktop: 1032px;
 $breakpoint-phone: 700px;
 
 @mixin basic {
-//   max-width: 1200px;
-//   padding: 0 16px;
-//   margin: 0 0 0 18%;
-    padding: 0 10% 0 12%;
+    padding: 0 12% 0 14%;
 }
 
 @mixin table-view {

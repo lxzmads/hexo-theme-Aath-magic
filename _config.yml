@@ -4,10 +4,9 @@ language: zh-CN
 
 # main menu navigation
 menu:
-  首页: /
-  关于: /about
   归档: /archives
   标签: /tags
+  关于: /about
 
 # Miscelaneous
 favicon: /favicon.ico

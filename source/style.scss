@@ -1,8 +1,16 @@
-$hover-color: rgb(247, 202, 24);
+$main-color: rgb(247, 202, 24);
+$background-color: #ffffff;
+$hover-color: $main-color;
+$dark-color: rgb(77, 77, 77);
+$green-color:#007670;
+$line-separator: rgba(178, 186, 194, .15);
+$dead-color: #bababa;
 $transition: .3s color;
 $box-shadow: 0 2px 5px -2px rgba(0,0,0,.05);
 $breakpoint-desktop: 1032px;
 $breakpoint-phone: 700px;
+$normal-font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
+$code-font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
 
 @mixin basic {
     padding: 0 19.1% 0 19.1%;
@@ -22,47 +30,48 @@ $breakpoint-phone: 700px;
 }
 
 @mixin left-container {
-  width: 72%;
+  width: 77%;
   background-color: #ffffff;
-  border-radius: 2px;
-  box-shadow: $box-shadow;
+//   border-radius: 2px;
+//   box-shadow: $box-shadow;
   overflow: hidden;
   box-sizing: border-box;
 }
 
 html {
   background-color: #f4f5f5;
+  font-size: 16px;
 }
 
 body {
-  font-family: ibm-plex-sans,"Helvetica Neue",Arial,sans-serif;
+  font-family: $normal-font-family;
+  line-height: 1.8;
   margin: 0;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-color: #ffffff;
+  background-color: $background-color;
 }
 
 a {
   text-decoration: none;
   cursor: pointer;
-  color: #909090;
+  color: $dead-color;
 }
 
+
 main {
-  flex-grow: 1;
+  flex-grow: 1;     // make sure the footer on the foot.
   display: flex;
   justify-content: space-evenly;
   @include basic;
 }
 
-@import 'css/_partical/categories';
 @import 'css/_partical/footer';
 @import 'css/_partical/header';
-@import 'css/_partical/tag';
 
 @import 'css/_archive';
-@import 'css/_about';
-@import 'css/_post';
-@import 'css/_index';
 @import 'css/_tags';
+@import 'css/_about';
+
+@import 'css/_post';

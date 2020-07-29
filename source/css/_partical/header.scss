@@ -1,28 +1,26 @@
 header {
-  background: #fff;
-  color: #909090;
+  color: $dead-color;
   margin-bottom: 15px;
   .header-container {
-    padding: 0 19.1% 0 19.1%;
+    @include basic;
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 60px;
     .logo {
-      color: $hover-color;
+      color: $main-color;
     }
     .right-header {
-      margin: 0;
-      padding: 0;
       li {
         list-style: none;
         display: inline-block;
-        padding: 0 18px;
-        &:last-child {
-          padding-right: 25px;
-        }
+        padding: 0 17px;
       }
       .nav-item {
+        a:hover{
+            color: $hover-color;
+            transition: $transition;
+        }
         .active {
           color: $hover-color;
         }

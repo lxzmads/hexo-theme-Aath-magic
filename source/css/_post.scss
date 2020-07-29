@@ -3,10 +3,7 @@
     article {
       @include left-container;
       width: 100%;
-      padding: 20px 25px;
-      border-bottom: 1px solid rgba(178, 186, 194, .15);
-      border-bottom-left-radius: 0;
-      border-bottom-right-radius: 0;
+      border-bottom: 1px solid $line-separator;
     }
     > .comment {
       @include left-container;
@@ -15,17 +12,14 @@
       border-top-left-radius: 0;
       border-top-right-radius: 0;
     }
-    p {
-        // text-align: justify;
-    }
     .post-meta {
-      font-size: 14px;
+      font-size: 12px;
       font-weight: 200;
-      color: #6E7173;
+      color: $dead-color;
       margin-bottom: 11px;
       font-family: ibm-plex-sans,"Helvetica Neue",Arial,sans-serif;
       a {
-        color: #404040;
+        color: $dead-color;
         font-size: 14px;
         font-weight: 200;
         &:hover {
@@ -35,7 +29,7 @@
     }
   }
   > .content {
-    width: 72%;
+    width: 77%;
   } 
   aside {
     flex-basis: 20%;
@@ -48,13 +42,13 @@
         height: 45px;
         line-height: 45px;
         box-sizing: border-box;
-        border-bottom: 1px solid rgba(178,186,194,.15);
+        border-bottom: 1px solid $line-separator;
         font-weight: normal;
-        color: #777677;
+        color: $dead-color;
       }
       .content {
         padding: 20px;
-        color: #666666;
+        color: $dead-color;
         font-size: 1em;
         line-height: 2;
       }
@@ -91,60 +85,24 @@
   }
 }
 
-@media (min-width: $breakpoint-desktop) {
-  #post {
-  }
-}
-
-@media (max-width: $breakpoint-desktop) {
-  #post {
-    width: 100%;
-    box-sizing: border-box;
-  }
-}
-
-@media (max-width: $breakpoint-phone) {
-  #post {
-    padding: 0;
-    flex-direction: column;
-    > .content {
-      order: 1;
-      width: 100%;
-    }
-    aside {
-      order: 0;
-      .toc-container {
-        margin-left: 0;
-        ol {
-          a {
-            &.active {
-              color: #007670;
-            }
-          }
-        }
-      }
-      > div {
-        margin-left: 0;
-        margin-bottom: 15px;
-      }
-    }
-  }
-}
-
 .aath-body {
-  font-family: ibm-plex-sans,"Helvetica Neue",Arial,sans-serif;
-  font-size: 16px;
-  line-height: 1.5;
+  font-family: $normal-font-family;
+//   font-size: 16px;
+  line-height: 1.8;
   word-wrap: break-word;
 
   a {
-    color: #007670;
+    color: $dead-color;
+    &:hover{
+        color: $green-color;
+        transform: $transition;
+    }
   }
 
   figure {
     margin: 0;
     table {
-      background-color: #ffffff;
+      background-color: $background-color;
       td.code {
         padding: 0;
         border: none;
@@ -191,29 +149,23 @@
   table,
   pre {
     margin-top: 0;
-    margin-bottom: 16px
+    margin-bottom: 18px;
   }
   p {
-    color: #323232;
-  }
-  hr {
-    height: 0.25em;
-    padding: 0;
-    margin: 24px 0;
-    background-color: #e1e4e8;
-    border: 0
+    text-indent: 1.8em;
+    color: $dark-color;
+    padding: 0 7px;
   }
   blockquote {
-    padding: 0 1em;
+    // padding: 0 1em;
     margin-left: 0;
-    color: #6a737d;
-    border-left: 0.25em solid #dfe2e5
-  }
-  blockquote>:first-child {
-    margin-top: 0
-  }
-  blockquote>:last-child {
-    margin-bottom: 0
+    // color: $dead-color;
+    border-left: 0.25em solid #dfe2e5;
+    p{
+        color: $dead-color;
+        text-indent: 0em;
+        font-size: 14px;
+    }
   }
   kbd {
     display: inline-block;
@@ -234,11 +186,10 @@
   h4,
   h5,
   h6 {
-    color: #4a4a4a;
-    margin-top: 24px;
-    margin-bottom: 16px;
+    font-size: 16px;
+    color: $dark-color;
+    // margin: 1em 0;
     font-weight: 600;
-    line-height: 1.25
   }
   h1 .octicon-link,
   h2 .octicon-link,
@@ -280,37 +231,19 @@
   h6 code {
     font-size: inherit
   }
-  h1 {
-    padding-bottom: 0.3em;
-    font-size: 2em;
-    border-bottom: 1px solid #eaecef
-  }
-  h2 {
-    padding-bottom: 0.3em;
-    font-size: 1.5em;
-    border-bottom: 1px solid #eaecef
-  }
-  h3 {
-    font-size: 1.25em
-  }
-  h4 {
-    font-size: 1em
-  }
-  h5 {
-    font-size: 0.875em
-  }
-  h6 {
-    font-size: 0.85em;
-    color: #6a737d
-  }
   ul,
   ol {
-    padding-left: 2em
+    padding-left: 3em;
+    list-style-type: square;
+    font-size: 14px;
+    p {
+        text-indent: 0;
+    }
   }
   ul.no-list,
   ol.no-list {
     padding: 0;
-    list-style-type: none
+    list-style-type: none;
   }
   ul ul,
   ul ol,
@@ -459,6 +392,7 @@
     padding-top: 0.2em;
     padding-bottom: 0.2em;
     margin: 0;
+    font-family: monospace;
     font-size: 85%;
     background-color: rgba(27, 31, 35, 0.05);
     border-radius: 3px
@@ -507,17 +441,19 @@
         pre {
           padding-right: 0;
           padding-left: 0;
-          color: #707070;
-          min-width: 40px;
-          text-align: right;
+          color: $dead-color;
+          min-width: 30px;
+          text-align: left;
         }
         .line{
           margin: 0;
           padding-right: 5px;
-          border-right: 3px solid #007670 !important;
+        //   border-right: 2px solid $green-color !important;
         }
       }
       .code {
+        font-family: monospace;
+        font-size: 14px;
         vertical-align: top;
       }
     }
@@ -533,13 +469,9 @@
     https://docs.google.com/document/d/1PPcEwAhXJJ1TQShor29KWB17KJJq7UJOM34oHwYP3Zg/edit
     */
     -webkit-text-size-adjust: none;
-    padding: 16px;
-    overflow: auto;
-    font-size: 85%;
-    line-height: 1.2;
+    // overflow: auto;
+    line-height: 1;
     background-color: #ffffff;
-    border-radius: 3px;
-    font-family: ibm-plex-sans,"Helvetica Neue",Arial,sans-serif;
   }
   pre code,
   pre tt {
@@ -631,6 +563,46 @@
     }
     .link {
       text-decoration: underline;
+    }
+  }
+}
+
+@media (min-width: $breakpoint-desktop) {
+  #post {
+  }
+}
+
+@media (max-width: $breakpoint-desktop) {
+  #post {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+@media (max-width: $breakpoint-phone) {
+  #post {
+    padding: 0;
+    flex-direction: column;
+    > .content {
+      order: 1;
+      width: 100%;
+    }
+    aside {
+      order: 0;
+      .toc-container {
+        margin-left: 0;
+        ol {
+          a {
+            &.active {
+              color: #007670;
+            }
+          }
+        }
+      }
+      > div {
+        margin-left: 0;
+        margin-bottom: 15px;
+      }
     }
   }
 }

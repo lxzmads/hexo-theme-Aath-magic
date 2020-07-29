@@ -3,30 +3,31 @@
   .content {
     // @include left-container;
     width: 100%;
-    // padding-left: 3%;
     align-self: flex-start;
     .year-list {
-      padding: 7px 0;
-      border-bottom: 1px solid rgba(178, 186, 194, .15);
+      border-bottom: 1px solid $line-separator;
       h3 {
         margin: 0 0 5px;
-        color: #666666;
-        font-size: 25px;
+        color: $dark-color;
       }
       ul {
+        font-size: 14px;
         margin: 0;
-        color: #404040;
-        font-weight: 200;
         padding-left: 0;
         li {
           list-style: none;
-          margin-bottom: 10px;
+          line-height: 2;
           time {
+            display: inline-block;
+            font-weight: 200;
             text-align: right;
+            color: $dead-color;
+            width: 107px;
           }
           a {
             margin-left: 10px;
-            font-weight: normal;
+            color: $dark-color;
+            font-weight: 400;
             transition: $transition;
             &:hover {
               color: $hover-color;

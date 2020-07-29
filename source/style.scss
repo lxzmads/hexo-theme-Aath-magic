@@ -1,11 +1,11 @@
-$hover-color: #007670;
+$hover-color: rgb(247, 202, 24);
 $transition: .3s color;
 $box-shadow: 0 2px 5px -2px rgba(0,0,0,.05);
 $breakpoint-desktop: 1032px;
 $breakpoint-phone: 700px;
 
 @mixin basic {
-    padding: 0 12% 0 14%;
+    padding: 0 19.1% 0 19.1%;
 }
 
 @mixin table-view {

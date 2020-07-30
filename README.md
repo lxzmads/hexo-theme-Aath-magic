@@ -1,10 +1,8 @@
 # Aath-magic
 
-Aath-magic 基于了[Aath](https://github.com/lewis-geek/hexo-theme-Aath)，参考了[developerworks](https://www.ibm.com/developerworks/cn) 设计风格
+Aath-magic 基于了[Aath](https://github.com/lewis-geek/hexo-theme-Aath)，~~参考了[developerworks](https://www.ibm.com/developerworks/cn) 设计风格~~
 
 ## [Demo](https://lxzmads.github.io/)
-
-![Aath-magic](https://raw.githubusercontent.com/lxzmads/picbed/master/20190812153600.png)
 
 ## 安装
 
